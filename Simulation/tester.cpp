@@ -1,14 +1,38 @@
 #include <iostream>
-#include "timer.h"
+#include "object.h"
+#include "vector.h"
 
 int main() {
-    Timer timer;
-    timer.start();
+    // Create a Vector for the starting position (x = 10, y = 5, z = 3)
+    Vector startPos(10, 5, 3);
 
-    // Some code you want to time
-    for (volatile int i = 0; i < 1e9; ++i);  // Just an example
+    // Create an Object at the starting position
+    Object obj(startPos);
 
-    std::cout << "Elapsed time: " << timer.elapsed() << " seconds." << std::endl;
+    // Output the object's initial position
+    std::cout << "Initial Position: "
+        << "x = " << obj.getPositionOnAxis('x') << ", "
+        << "y = " << obj.getPositionOnAxis('y') << ", "
+        << "z = " << obj.getPositionOnAxis('z') << std::endl;
+
+    // Move the object to a new position (x = 20, y = 10, z = 6)
+    Vector newPos(20, 10, 6);
+    obj.move(newPos);
+
+    // Output the object's new position
+    std::cout << "New Position: "
+        << "x = " << obj.getPositionOnAxis('x') << ", "
+        << "y = " << obj.getPositionOnAxis('y') << ", "
+        << "z = " << obj.getPositionOnAxis('z') << std::endl;
+
+    // Move the object in the 'x' direction by +5
+    obj.moveInDirection('x', 5);
+
+    // Output the object's updated position
+    std::cout << "After Moving in X: "
+        << "x = " << obj.getPositionOnAxis('x') << ", "
+        << "y = " << obj.getPositionOnAxis('y') << ", "
+        << "z = " << obj.getPositionOnAxis('z') << std::endl;
 
     return 0;
 }

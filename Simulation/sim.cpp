@@ -29,66 +29,16 @@
 //#pragma endregion
 //
 //#pragma region Data Structures
-
-//class Timer {
-//private:
-//    chrono::high_resolution_clock::time_point startTime;
-//
-//public:
-//    void start() {
-//        startTime = chrono::high_resolution_clock::now();
-//    }
-//    double elapsed() {
-//        auto endTime = chrono::high_resolution_clock::now();
-//        return chrono::duration<double>(endTime - startTime).count();
-//    }
-//};
-//
 ////initialize the static random number generator globally
 //mt19937 Vector::gen(static_cast<unsigned int>(time(0)));
 //#pragma endregion
 //
 //#pragma region Objects
 //
-//class FileHandler {
-//public:
-//    static void writeToFile(string filename, string data) {
 //
-//        ofstream file(filename, ios::out | ios::app);
-//        file << data;
-//    }
-//};
 //
 ////base object class that any physical "thing" inherits from
-//class Object {
-//private:
-//    //where the object is
-//    Vector position;
-//
-//public:
-//    Object(Vector startingPosition)
-//        : position(startingPosition) {
-//    }
-//    //rellocate the object to a new position
-//    void move(Vector newPosition) {
-//        position = newPosition;
-//    }
-//
-//    //add ior subtract from a specified axis
-//    void moveInDirection(char axis, double amount) {
-//        position.moveValueOnAxis(axis, amount);
-//    }
-//    //return the position vector
-//    Vector getPosition() const {
-//        return position;
-//    }
-//    //return the value on a specified axis
-//    double getPositionOnAxis(char axis) {
-//        return position.getValueOnAxis(axis);
-//    }
-//
-//
-//};
+
 //
 //
 //
