@@ -128,7 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="confinement.cpp" />
+    <ClCompile Include="fileHandler.cpp" />
     <ClCompile Include="object.cpp" />
+    <ClCompile Include="simpleLife.cpp" />
     <ClCompile Include="tester.cpp" />
     <ClCompile Include="sim.cpp" />
     <ClCompile Include="timer.cpp" />
@@ -136,7 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="confinement.h" />
+    <ClInclude Include="fileHandler.h" />
     <ClInclude Include="object.h" />
+    <ClInclude Include="simpleLife.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="vector.h" />
   </ItemGroup>

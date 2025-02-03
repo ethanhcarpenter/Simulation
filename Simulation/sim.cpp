@@ -198,62 +198,7 @@
 //    }
 //};
 //
-//class Confinement {
-//private:
-//    map<string, unique_ptr<class SimpleLife>> lifeForms;
-//    const double length;
-//    const double width;
-//    const string metric;
-//    const int TPS;
 //
-//public:
-//    Confinement(double length, double width, string metric, int TPS)
-//        : length(length), width(width), metric(metric), TPS(TPS) {
-//    }
-//
-//    //retrun ticks per second
-//    int getTPS() {
-//        return TPS;
-//    }
-//    //return length of confinement
-//    double getLength() {
-//        return length;
-//    }
-//    //return width of confinement
-//    double getWidth() {
-//        return width;
-//    }
-//    //create a simple life form within the confinement 
-//    void addSimpleLife(string identifier, double avgSpeed, Vector startingPosition, double mass, double meetRadius) {
-//        lifeForms[identifier] = make_unique<SimpleLife>(identifier, avgSpeed, startingPosition, mass, meetRadius, getTPS());
-//    }
-//    //return a life form with specified identifier
-//    SimpleLife* getLifeForm(string identifier) {
-//        return lifeForms[identifier].get();
-//    }
-//    //return all life forms
-//    vector<SimpleLife*> getAllLifeForms() {
-//        vector<SimpleLife*> allLife;
-//        for (int i = 0; i < lifeForms.size(); i++) {
-//            auto it = lifeForms.begin();
-//            //like a pointer advance it to the ith position
-//            advance(it, i);
-//            //add the life to the vector
-//            allLife.push_back(it->second.get());
-//        }
-//        return allLife;
-//    }
-//    //clea the list of life forms
-//    void removeAllLife() {
-//        lifeForms.clear();
-//    }
-//};
-//
-//class Photon {
-//private:
-//    double speed = 3e8;
-//
-//};
 //
 //#pragma endregion
 //

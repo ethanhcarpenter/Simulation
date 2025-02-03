@@ -5,6 +5,9 @@
 #include <string>
 
 constexpr double INF = 1e99;
+constexpr double PI = 3.14159265358979323846;
+
+
 
 struct PositionTuple {
     double x = INF, y = INF, z = INF;

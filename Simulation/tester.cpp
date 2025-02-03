@@ -1,38 +1,31 @@
 #include <iostream>
-#include "object.h"
+#include "simpleLife.h"
 #include "vector.h"
+#include "confinement.h"
 
 int main() {
-    // Create a Vector for the starting position (x = 10, y = 5, z = 3)
-    Vector startPos(10, 5, 3);
+    // Create a confinement (length = 100, width = 100, metric = "meters", TPS = 30)
+    Confinement confinement(100.0, 100.0, "meters", 30);
 
-    // Create an Object at the starting position
-    Object obj(startPos);
+    // Create a life form and add it to the confinement
+    Vector startPos(10.0, INF, 0.0);
+    confinement.addSimpleLife("Life1", 5.0, startPos, 70.0, 2.0);
 
-    // Output the object's initial position
-    std::cout << "Initial Position: "
-        << "x = " << obj.getPositionOnAxis('x') << ", "
-        << "y = " << obj.getPositionOnAxis('y') << ", "
-        << "z = " << obj.getPositionOnAxis('z') << std::endl;
+    // Retrieve and display the life form
+    SimpleLife* lifeForm = confinement.getLifeForm("Life1");
+    std::cout << "Life form 'Life1' position: "
+        << "x = " << lifeForm->getPositionOnAxis('x') << ", "
+        << "y = " << lifeForm->getPositionOnAxis('y') << ", "
+        << "z = " << lifeForm->getPositionOnAxis('z') << std::endl;
 
-    // Move the object to a new position (x = 20, y = 10, z = 6)
-    Vector newPos(20, 10, 6);
-    obj.move(newPos);
+    // Create a random path
+    lifeForm->createRandomPath(10.0, 100.0, 100.0);
 
-    // Output the object's new position
-    std::cout << "New Position: "
-        << "x = " << obj.getPositionOnAxis('x') << ", "
-        << "y = " << obj.getPositionOnAxis('y') << ", "
-        << "z = " << obj.getPositionOnAxis('z') << std::endl;
+    lifeForm->resetLifeForm(startPos);
 
-    // Move the object in the 'x' direction by +5
-    obj.moveInDirection('x', 5);
-
-    // Output the object's updated position
-    std::cout << "After Moving in X: "
-        << "x = " << obj.getPositionOnAxis('x') << ", "
-        << "y = " << obj.getPositionOnAxis('y') << ", "
-        << "z = " << obj.getPositionOnAxis('z') << std::endl;
+    // Create a path to a target
+    Vector target(50.0, INF, 0.0);
+    lifeForm->createTargetPath(10.0, 100.0, 100.0, target);
 
     return 0;
 }
