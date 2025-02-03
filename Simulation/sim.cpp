@@ -29,15 +29,7 @@
 //#pragma endregion
 //
 //#pragma region Data Structures
-//
-//
-//
-////custom struct to represent co ordinates 
-//
-//
-////custom data structure to store and manipulate co ordinates
-//
-//
+
 //class Timer {
 //private:
 //    chrono::high_resolution_clock::time_point startTime;
