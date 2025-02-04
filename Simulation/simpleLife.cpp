@@ -55,7 +55,7 @@ void SimpleLife::createRandomPath(double time, double width, double length) {
     }
 
     // Create file of points
-    std::string filename = "./outputs/paths/generatedPaths/random_" + identifier + ".txt";
+    std::string filename = "random_" + identifier + ".txt";
     std::string pointsStr = "";
     for (auto& point : justPoints) {
         pointsStr += point.stringFileRepresentation() + "\n";
@@ -99,7 +99,7 @@ void SimpleLife::createTargetPath(double time, double width, double length, Vect
         angle = 270;
     }
 
-    std::string filename = "./outputs/debug/angles/angle_" + identifier + ".txt";
+    std::string filename = "angle_" + identifier + ".txt";
     std::ostringstream oss;
     oss << "target: " << target.stringDebugRepresentation() << "\n"
         << "Current Position: " << getPosition().stringDebugRepresentation() << "\n"
@@ -122,6 +122,10 @@ void SimpleLife::createTargetPath(double time, double width, double length, Vect
         double newX = getPositionOnAxis('x') + moveX;
         double newZ = getPositionOnAxis('z') + moveZ;
 
+        if (newZ > 1 || newZ < 1) {
+            int a;
+        }
+
         moveInDirection('x', moveX);
         moveInDirection('z', moveZ);
 
@@ -129,7 +133,7 @@ void SimpleLife::createTargetPath(double time, double width, double length, Vect
         justPoints.push_back(Vector{ getPositionOnAxis('x'), getPositionOnAxis('y'), getPositionOnAxis('z') });
     }
 
-    filename = "./outputs/paths/generatedPaths/target_" + identifier + ".txt";
+    filename = "target_" + identifier + ".txt";
     std::string pointsStr = "";
     for (auto& point : justPoints) {
         pointsStr += point.stringFileRepresentation() + "\n";
@@ -140,6 +144,7 @@ void SimpleLife::createTargetPath(double time, double width, double length, Vect
 void SimpleLife::resetLifeForm(Vector startingPosition) {
     move(startingPosition);
     points.clear();
+    justPoints.clear();
     points.push_back({ 0, startingPosition });
 }
 

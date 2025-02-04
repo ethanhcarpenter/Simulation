@@ -9,7 +9,7 @@ int main() {
 
     // Create a life form and add it to the confinement
     Vector startPos(10.0, INF, 0.0);
-    confinement.addSimpleLife("Life1", 5.0, startPos, 70.0, 2.0);
+    confinement.addSimpleLife("Life1", 2.5, startPos, 70.0, 2.0);
 
     // Retrieve and display the life form
     SimpleLife* lifeForm = confinement.getLifeForm("Life1");
