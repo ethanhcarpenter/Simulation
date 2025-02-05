@@ -61,7 +61,10 @@ Vector Vector::randomise(int minX, int minZ, int maxX, int maxZ, bool debug) {
 }
 
 double Vector::random(double start, double end) {
-    std::uniform_real_distribution<> dist(start, end);
+    static std::random_device rd;   // Non-deterministic random seed
+    static std::mt19937 gen(rd());  // Mersenne Twister engine
+
+    std::uniform_real_distribution<double> dist(start, end);
     return dist(gen);
 }
 

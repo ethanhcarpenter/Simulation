@@ -30,6 +30,11 @@ SimpleLife* Confinement::getLifeForm(std::string identifier) {
     return lifeForms[identifier].get();
 }
 
+// Create a random vector within the Confinement
+Vector Confinement::createRandomVector(bool debug) {
+	return Vector::randomise(-length / 2, -width / 2, length / 2, width / 2, debug);
+}
+
 // Return all life forms
 std::vector<SimpleLife*> Confinement::getAllLifeForms() {
     std::vector<SimpleLife*> allLife;

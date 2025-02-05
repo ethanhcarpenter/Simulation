@@ -13,22 +13,25 @@ Confinement& Simulation::getConfinement() {
 
 void Simulation::generateRandomPath(std::string identifier, double time) {
     SimpleLife* life = confinement->getLifeForm(identifier);
+    Vector start = life->getPosition();
     int lastTurn = Vector::random(-360, 360);
 
     for (int tick = 0; tick < time * TPS; tick++) {
         lastTurn = life->createRandomPath(confinement->getWidth(), confinement->getLength(), tick, lastTurn);
     }
 
-    std::string filename = "random_" + identifier + ".txt";
+    std::string filename = "random\\"+identifier + ".txt";
     std::string points;
     for (auto point : *life->getJustPoints()) {
         points += point.stringFileRepresentation() + "\n";
     }
     FileHandler::writeToFile(filename, points);
+    life->resetLifeForm(start);
 }
 
 void Simulation::generateTargetPath(std::string identifier, double time, Vector target) {
     SimpleLife* life = confinement->getLifeForm(identifier);
+	Vector start = life->getPosition();
     double angle = calculateAngle(life->getPosition(), target);
 
     for (int tick = 0; tick < time * TPS; tick++) {
@@ -37,13 +40,13 @@ void Simulation::generateTargetPath(std::string identifier, double time, Vector 
         }
         life->createTargetPath(confinement->getWidth(), confinement->getLength(), tick, angle);
     }
-
-    std::string filename = "target_" + identifier + ".txt";
+    std::string filename = "target/" + identifier + ".txt";
     std::string points;
     for (auto point : *life->getJustPoints()) {
         points += point.stringFileRepresentation() + "\n";
     }
     FileHandler::writeToFile(filename, points);
+	life->resetLifeForm(start);
 }
 
 double Simulation::calculateAngle(Vector current, Vector target) {

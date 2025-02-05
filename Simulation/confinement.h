@@ -36,6 +36,9 @@ public:
     // Return all life forms
     std::vector<SimpleLife*> getAllLifeForms();
 
+    // Create random Vector within Confinement
+	Vector createRandomVector(bool debug=false);
+
     // Remove all life forms
     void removeAllLife();
 };
