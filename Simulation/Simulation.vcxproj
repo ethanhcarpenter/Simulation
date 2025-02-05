@@ -131,6 +131,7 @@
     <ClCompile Include="fileHandler.cpp" />
     <ClCompile Include="object.cpp" />
     <ClCompile Include="simpleLife.cpp" />
+    <ClCompile Include="simulation.cpp" />
     <ClCompile Include="tester.cpp" />
     <ClCompile Include="sim.cpp" />
     <ClCompile Include="timer.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="fileHandler.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="simpleLife.h" />
+    <ClInclude Include="simulation.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="vector.h" />
   </ItemGroup>
