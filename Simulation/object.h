@@ -4,22 +4,22 @@
 
 class Object {
 private:
-    Vector position;  // Object's position
+    Vector position;//object's position
 
 public:
-    // Constructor to initialize position
+    //constructor to initialize position
     Object(const Vector& startingPosition);
 
-    // Relocate the object to a new position
+    //relocate the object to a new position
     void move(const Vector& newPosition);
 
-    // Move along a specified axis
+    //move along a specified axis
     void moveInDirection(char axis, double amount);
 
-    // Get the position vector
+    //get the position vector
     const Vector& getPosition() const;
 
-    // Get the position value on a specified axis
+    //get the position value on a specified axis
     double getPositionOnAxis(char axis) const;
 };
 

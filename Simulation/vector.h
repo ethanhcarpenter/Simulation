@@ -3,6 +3,8 @@
 #include <sstream>
 #include <random>
 #include <string>
+#include <iomanip>
+
 
 constexpr double INF = 1e99;
 constexpr double PI = 3.14159265358979323846;
@@ -17,16 +19,16 @@ class Vector {
 private:
     PositionTuple positionTuple;
 public:
-    // Constructors
+    //constructors
     Vector();
     Vector(double ax, double ay, double az);
 
-    // Member functions
+    //member functions
     double getValueOnAxis(char axis) const;
     void setValueOnAxis(char axis, double value);
     void moveValueOnAxis(char axis, double value);
 
-    // Static functions
+    //static functions
     static Vector add(const Vector& v1, const Vector& v2);
     static Vector subtract(const Vector& v1, const Vector& v2);
     static double dot2D(const Vector& v1, const Vector& v2);
@@ -34,7 +36,7 @@ public:
     static Vector randomise(int minX, int minZ, int maxX, int maxZ, bool debug = false);
     static double random(double start = 0, double end = 0);
 
-    // Debug and File Output
+    //debug and file output
     std::string stringDebugRepresentation() const;
     std::string stringFileRepresentation() const;
 };

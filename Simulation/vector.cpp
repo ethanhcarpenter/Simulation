@@ -79,6 +79,9 @@ std::string Vector::stringDebugRepresentation() const {
 
 std::string Vector::stringFileRepresentation() const {
     std::ostringstream oss;
-    oss << positionTuple.x << " " << positionTuple.y << " " << positionTuple.z;
+    oss << std::fixed << std::setprecision(3)
+        << (INF==(positionTuple.x) ? std::string("1e99") : std::to_string(positionTuple.x)) << " "
+        << (INF==(positionTuple.y) ? std::string("1e99") : std::to_string(positionTuple.y)) << " "
+        << (INF==(positionTuple.z) ? std::string("1e99") : std::to_string(positionTuple.z));
     return oss.str();
 }

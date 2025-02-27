@@ -8,37 +8,37 @@
 
 class Confinement {
 private:
-    std::map<std::string, std::unique_ptr<class SimpleLife>> lifeForms;  // Store life forms
-    const double length;  // Length of the confinement
-    const double width;   // Width of the confinement
-    const std::string metric;  // Metric system used
-    const int TPS;  // Ticks per second
+    std::map<std::string, std::unique_ptr<class SimpleLife>> lifeForms;  //store life forms
+    const double length;//length of the confinement
+    const double width;//width of the confinement
+    const std::string metric;//metric system used
+    const int TPS;//ticks per second
 
 public:
-    // Constructor
+    //constructor
     Confinement(double length, double width, std::string metric, int TPS);
 
-    // Return ticks per second
+    //return ticks per second
     int getTPS();
 
-    // Return the length of the confinement
+    //return the length of the confinement
     double getLength();
 
-    // Return the width of the confinement
+    //return the width of the confinement
     double getWidth();
 
-    // Add a new simple life form
+    //add a new simple life form
     void addSimpleLife(std::string identifier, double avgSpeed, Vector startingPosition, double mass, double meetRadius);
 
-    // Return a specific life form by its identifier
+    //return a specific life form by its identifier
     SimpleLife* getLifeForm(std::string identifier);
 
-    // Return all life forms
+    //return all life forms
     std::vector<SimpleLife*> getAllLifeForms();
 
-    // Create random Vector within Confinement
+    //create random Vector within Confinement
 	Vector createRandomVector(bool debug=false);
 
-    // Remove all life forms
+    //remove all life forms
     void removeAllLife();
 };
